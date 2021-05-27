@@ -1,0 +1,9 @@
+#Liquibase не нравится пустой мастер-файл, поэтому этот кусок кода будет удален при добавлении миграций
+databaseChangeLog:
+  - changeset:
+      id: 1
+      author: vlad
+
+  #BASE
+
+  #Test Data
