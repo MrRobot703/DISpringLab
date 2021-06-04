@@ -1,0 +1,45 @@
+databaseChangeLog:
+
+  #Table
+  - changeSet:
+      id: 000000-create-table-simple_toys
+      author: vsurkov
+      changes:
+        - createTable:
+            tableName: simple_toy
+            columns:
+              - column: { name: simple_toy_id, type: bigint, remarks: 'Ид игрушки' }
+              - column: { name: name, type: varchar(255), remarks: 'Кличка' }
+              - column: { name: simple_pet_id, type: bigint, remarks: 'Ид питомца, которому принадлежит игрушка' }
+
+  #Constraints
+  - changeSet:
+      id: 000000-create-simple_toys-constraints
+      author: vsurkov
+      changes:
+        #Не пустое поле simple_toy_id
+        - addNotNullConstraint:
+            tableName: simple_toy
+            columnName: simple_toy_id
+            columnDataType: bigint
+        # Первичный ключ
+        - addPrimaryKey:
+            columnNames: simple_toy_id
+            tableName: simple_toy
+        #Уникальное поле name
+        - addUniqueConstraint:
+            tableName: simple_toy
+            columnNames: name
+            constraintName: simple_toy_unique_name
+
+  #Foreign Keys
+  - changeSet:
+      id: 000003-create-simple-pet-fk
+      author: vsurkov
+      changes:
+        - addForeignKeyConstraint:
+            constraintName: fk_simple_pet_simple_toy_id
+            baseTableName: simple_toy
+            baseColumnNames: simple_pet_id
+            referencedTableName: simple_pet
+            referencedColumnNames: simple_pet_id
