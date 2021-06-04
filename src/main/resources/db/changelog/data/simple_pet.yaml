@@ -1,0 +1,27 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create_simple_pet
+      author: vsurkov
+      context: test_data
+      changes:
+        - insert:
+            columns:
+              - column: { name: simple_pet_id, value: 1001 }
+              - column: { name: name, value: 'Бобик' }
+            tableName: simple_pet
+        - insert:
+            columns:
+              - column: { name: simple_pet_id, value: 1002 }
+              - column: { name: name, value: 'Васька' }
+            tableName: simple_pet
+        - insert:
+            columns:
+              - column: { name: simple_pet_id, value: 1003 }
+              - column: { name: name, value: 'Жучка' }
+            tableName: simple_pet
+        - insert:
+            columns:
+              - column: { name: simple_pet_id, value: 1004 }
+              - column: { name: name, value: 'Мурка' }
+            tableName: simple_pet

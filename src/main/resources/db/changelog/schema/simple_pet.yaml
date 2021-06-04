@@ -1,0 +1,32 @@
+databaseChangeLog:
+
+  #Table
+  - changeSet:
+      id: 000000-create-table-simple_pets
+      author: vsurkov
+      changes:
+        - createTable:
+            tableName: simple_pet
+            columns:
+              - column: { name: simple_pet_id, type: bigint, remarks: 'Ид питомца' }
+              - column: { name: name, type: varchar(255), remarks: 'Кличка' }
+
+  #Constraints
+  - changeSet:
+      id: 000000-create-simple_pets-constraints
+      author: vsurkov
+      changes:
+        #Не пустое поле simple_pet_id
+        - addNotNullConstraint:
+            tableName: simple_pet
+            columnName: simple_pet_id
+            columnDataType: bigint
+        # Первичный ключ
+        - addPrimaryKey:
+            columnNames: simple_pet_id
+            tableName: simple_pet
+        #Уникальное поле name
+        - addUniqueConstraint:
+            tableName: simple_pet
+            columnNames: name
+            constraintName: simple_pet_unique_name

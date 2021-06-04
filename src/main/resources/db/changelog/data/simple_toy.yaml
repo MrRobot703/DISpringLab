@@ -1,0 +1,49 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create_simple_pet
+      author: vsurkov
+      context: test_data
+      changes:
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1001 }
+              - column: { name: simple_pet_id, value: 1001 }
+              - column: { name: name, value: 'Ботинок' }
+            tableName: simple_toy
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1002 }
+              - column: { name: simple_pet_id, value: 1001 }
+              - column: { name: name, value: 'Тапочки' }
+            tableName: simple_toy
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1003 }
+              - column: { name: simple_pet_id, value: 1003 }
+              - column: { name: name, value: 'Мячик' }
+            tableName: simple_toy
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1004 }
+              - column: { name: simple_pet_id, value: 1004 }
+              - column: { name: name, value: 'Резинка' }
+            tableName: simple_toy
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1005 }
+              - column: { name: simple_pet_id, value: 1002 }
+              - column: { name: name, value: 'Уточка' }
+            tableName: simple_toy
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1006 }
+              - column: { name: simple_pet_id, value: 1003 }
+              - column: { name: name, value: 'Рыбка' }
+            tableName: simple_toy
+        - insert:
+            columns:
+              - column: { name: simple_toy_id, value: 1007 }
+              - column: { name: simple_pet_id, value: 1004 }
+              - column: { name: name, value: 'Флюгегехаймен' }
+            tableName: simple_toy
