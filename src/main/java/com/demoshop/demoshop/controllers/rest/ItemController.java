@@ -46,7 +46,7 @@ public class ItemController {
 
     @PutMapping("/updateItem")
     public void updateItem(@RequestBody ItemEntity item) {
-        entService.update(item);
+        entService.saveOrUpdate(item);
     }
 
 

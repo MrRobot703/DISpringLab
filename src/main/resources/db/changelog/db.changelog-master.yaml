@@ -1,9 +1,8 @@
 #Liquibase не нравится пустой мастер-файл, поэтому этот кусок кода будет удален при добавлении миграций
 databaseChangeLog:
-  - changeset:
-      id: 1
-      author: vlad
-
   #BASE
+  #item
+  - include: { relativeToChangelogFile: true, file: schema/item.yaml }
 
   #Test Data
+  - include: { relativeToChangelogFile: true, file: data/item.yaml }

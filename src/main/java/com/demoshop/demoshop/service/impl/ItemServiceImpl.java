@@ -49,7 +49,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
 
-    public ItemEntity update(ItemEntity item) {
+    public ItemEntity saveOrUpdate(ItemEntity item) {
         if (itRepository.findById(item.getId()).isPresent()) {
             ItemEntity tmpEntity = itRepository.findById(item.getId()).get();
             tmpEntity.setPrice(item.getPrice());

@@ -8,7 +8,7 @@ import java.util.List;
 public interface ItemService {
     ItemEntity save(ItemDto dto);
     List<ItemDto> getAllItems();
-    ItemEntity update(ItemEntity item);
+    ItemEntity saveOrUpdate(ItemEntity item);
     ItemDto convertToItemDto(ItemEntity itEntity);
     ItemEntity getItemById(Long id);
     void delete(Long id);
