@@ -1,0 +1,41 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 000000-create-item-data
+      author: ashurygina
+      context: test_data
+      changes:
+        - insert:
+            columns:
+              - column: { name: item_id, value: 1001 }
+              - column: { name: name, value: 'TV' }
+              - column: { name: price, value: 10000 }
+            tableName: item
+
+        - insert:
+            columns:
+              - column: { name: item_id, value: 1002 }
+              - column: { name: name, value: 'Oven' }
+              - column: { name: price, value: 8000 }
+            tableName: item
+
+        - insert:
+            columns:
+              - column: { name: item_id, value: 1003 }
+              - column: { name: name, value: 'Washer' }
+              - column: { name: price, value: 11000 }
+            tableName: item
+
+        - insert:
+            columns:
+              - column: { name: item_id, value: 1004 }
+              - column: { name: name, value: 'Washing machine' }
+              - column: { name: price, value: 7000 }
+            tableName: item
+
+        - insert:
+            columns:
+              - column: { name: item_id, value: 1005 }
+              - column: { name: name, value: 'Smartphone' }
+              - column: { name: price, value: 22000 }
+            tableName: item
