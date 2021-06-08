@@ -1,0 +1,38 @@
+databaseChangeLog:
+
+  #Table
+  - changeSet:
+      id: 000000-create-table-item
+      author: ashurygina
+      changes:
+        - createTable:
+            tableName: item
+            columns:
+              - column: { name: item_id, type: bigint, remarks: 'Item ID' }
+              - column: { name: name, type: varchar, remarks: 'Name' }
+              - column: { name: price, type: double precision, remarks: 'Price' }
+
+
+  #Constraints
+  - changeSet:
+      id: 050621-create-item-constraints
+      author: ashurygina
+      changes:
+        - addNotNullConstraint:
+            tableName: item
+            columnName: item_id
+            columnDataType: bigint
+        - addPrimaryKey:
+            columnNames: item_id
+            tableName: item
+
+
+  #Sequence
+  - changeSet:
+      id: 050621-create-item-sequence
+      author: ashurygina
+      changes:
+        - createSequence:
+            - sequenceName: item_id_seq
+            - incrementBy: 50
+            - startValue: 10000
