@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout/head :: head}"></head>
+
+<script type="text/javascript" src="/resources/js/simple/simpleMain.js"></script>
+<body class="page">
+
+<div th:insert="~{layout/header :: header}"></div>
+
+<div id="wrap">
+    <div style="text-align: center; margin: 1%">
+        <img src="/resources/img/simple/logo.png">
+    </div>
+    <button onclick="onClick1()">Привет, я кнопка </button>
+    <div id="main" class="container clear-top">
+        <div id="contentDiv"></div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="/resources/js/simple/SimpleEndMain.js"></script>
+</html>

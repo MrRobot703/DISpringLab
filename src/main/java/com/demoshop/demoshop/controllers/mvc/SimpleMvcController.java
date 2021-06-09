@@ -10,15 +10,15 @@ import java.util.Map;
 @Controller
 public class SimpleMvcController {
 
-    @GetMapping({"", "/index"})
-    public String index() {
-        return "index";
-    }
-
     @GetMapping("/mvc")
     public ModelAndView modelAndView() {
         Map<String, String> model = new HashMap<>();
         model.put("shopName", "Demo Shop");
         return new ModelAndView("modelExample", model);
+    }
+
+    @GetMapping({"/simple"})
+    public String index() {
+        return "simple/simplePetList";
     }
 }
