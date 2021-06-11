@@ -1,7 +1,6 @@
 package com.demoshop.demoshop.controllers;
 
-import com.demoshop.demoshop.dao.repository.UserRepository;
-import com.demoshop.demoshop.security.RegistrationForm;
+import com.demoshop.demoshop.config.security.RegistrationForm;
 import com.demoshop.demoshop.service.api.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.security;
+package com.demoshop.demoshop.config.security;
 
 import com.demoshop.demoshop.dao.User;
 import lombok.Data;

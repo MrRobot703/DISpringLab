@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.security;
+package com.demoshop.demoshop.config.security;
 
 import com.demoshop.demoshop.service.api.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
                 .antMatchers("/user").hasRole("ADMIN")
-                .antMatchers("/", "/registration", "/login").permitAll()
+                .antMatchers("/", "/registration", "/login", "/toys").permitAll()
                 .and()
-                .formLogin().loginPage("/login");
+                .formLogin().loginProcessingUrl("/login");
     }
 
     @Bean

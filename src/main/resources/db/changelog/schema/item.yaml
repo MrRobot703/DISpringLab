@@ -33,6 +33,6 @@ databaseChangeLog:
       author: ashurygina
       changes:
         - createSequence:
-            - sequenceName: item_id_seq
-            - incrementBy: 50
-            - startValue: 10000
+            sequenceName: item_id_seq
+            incrementBy: 50
+            startValue: 10000
