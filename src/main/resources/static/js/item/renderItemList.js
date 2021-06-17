@@ -16,25 +16,54 @@ function renderItemList() {
             var table = document.createElement('table');
             table.className = "table table-bordered";
 //            table.innerHTML +="<tr style='background-color:#28a745'><td colspan='3'>"+"<strong>Name</strong>"+"</td><td>"+"</td><td>"+"<strong>Price,rub</strong>";
+             var tr;
+             var td;
+            data.forEach(function (item) {
+                               tr = table.insertRow();
+                               tr.style.border = '1px black';
+                               tr.style.backgroundColor="darkseagreen";
+                               td = tr.insertCell();
+                               td.style.width  = '300px';
+                               td.appendChild(document.createTextNode(item.name));
+                               td = tr.insertCell();
+                               td.style.width  = '300px';
+                               switch (item.name) {
+                                 case 'TV':
+                                   td.innerHTML="<img src='/resources/img/tv.jpg' width='150' height='100'>";
+                                   break;
+                                 case 'Oven':
+                                   td.innerHTML="<img src='/resources/img/oven.jpg' width='150' height='100'>";
+                                   break;
+                                 case 'Washer':
+                                  td.innerHTML="<img src='/resources/img/washer.jpg' width='150' height='100'>";
+                                   break;
+                                 case 'Washing machine':
+                                    td.innerHTML="<img src='/resources/img/dwasher.jpg' width='150' height='100'>";
+                                    break;
+                                 case 'Smartphone':
+                                      td.innerHTML="<img src='/resources/img/Smartphone.jpg' width='150' height='100'>";
+                                      break;
+
+                               }
+                               td = tr.insertCell();
+                               td.appendChild(document.createTextNode(item.price));
+
+                        });
 
 
-            var tr;
-            var td;
-            for(var i=0;i<data.length;++i){
-            tr = table.insertRow();
-            tr.style.border = '1px black';
-            tr.style.backgroundColor="darkseagreen";
-            tr.setAttribute('rowSpan', '2');
-            for(var j=0;j<3;++j){
-                td = tr.insertCell();
-                td.style.width  = '400px';
-//                td.innerHTML="<img src='/resources/img/sale.png' width='150' height='100'>";
-                }
-                }
+//            for(var i=0;i<data.length;++i){
+//            tr = table.insertRow();
+//            tr.style.border = '1px black';
+//            tr.style.backgroundColor="darkseagreen";
+//            tr.setAttribute('rowSpan', '2');
+//            for(var j=0;j<3;++j){
+//                td = tr.insertCell();
+//                td.style.width  = '400px';
+////                td.innerHTML="<img src='/resources/img/sale.png' width='150' height='100'>";
+//                }
+//                }
 
-//            data.forEach(function (item) {
-//                            table.innerHTML += "<tr style='background-color: darkseagreen'><td colspan='3'>" + item.name+"</td><td>"+"<img src='/resources/img/sale.png' width='150' height='100'>"+"<img src='/resources/img/sale2.png' width='150' height='100'>"+"</td><td>"+item.price;
-//                        });
+
 
             mainDiv.appendChild(table);
 

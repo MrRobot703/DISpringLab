@@ -5,9 +5,9 @@ spring:
     active: dev
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/demoshop
+    url: jdbc:postgresql://localhost:5432/pets
     username: postgres
-    password: postgres
+    password: 123
     liquibase:
       enabled: true
   sql:
