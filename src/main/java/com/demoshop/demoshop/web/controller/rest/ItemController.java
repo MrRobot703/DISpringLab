@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.controllers.rest;
+package com.demoshop.demoshop.web.controller.rest;
 
 import com.demoshop.demoshop.data.dto.simple.ItemDto;
 import com.demoshop.demoshop.data.entity.ItemEntity;

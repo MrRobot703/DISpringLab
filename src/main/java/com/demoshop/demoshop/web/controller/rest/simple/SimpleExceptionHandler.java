@@ -1,10 +1,10 @@
-package com.demoshop.demoshop.controllers.rest.simple;
+package com.demoshop.demoshop.web.controller.rest.simple;
 
 import com.demoshop.demoshop.exceptions.PetNotFoundByIdException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice(basePackages = "com.demoshop.demoshop.controllers.rest.simple")
+@RestControllerAdvice(basePackages = "com.demoshop.demoshop.web.controllers.rest.simple")
 public class SimpleExceptionHandler {
 
     @ExceptionHandler(PetNotFoundByIdException.class)

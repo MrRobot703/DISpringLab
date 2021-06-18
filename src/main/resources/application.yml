@@ -2,6 +2,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+    show-sql: true
   mvc:
     static-path-pattern: /resources/**/**
   profiles:
@@ -10,9 +11,15 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/demoshop
     username: postgres
-    password: Ihubev1488228_
+    password: postgres
     liquibase:
       enabled: true
   sql:
     init:
       platform: postgresql
+  thymeleaf:
+    template-loader-path: classpath:/templates
+    suffix: .html
+    cache: false
+  messages:
+    basename: validation

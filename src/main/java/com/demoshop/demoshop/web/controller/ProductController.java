@@ -1,8 +1,8 @@
-package com.demoshop.demoshop.controllers;
+package com.demoshop.demoshop.web.controller;
 
-import com.demoshop.demoshop.viewModel.PropertyViewModel;
-import com.demoshop.demoshop.viewModel.PropertyViewModel.Type;
-import com.demoshop.demoshop.viewModel.ToyViewModel;
+import com.demoshop.demoshop.web.viewModel.PropertyViewModel;
+import com.demoshop.demoshop.web.viewModel.PropertyViewModel.Type;
+import com.demoshop.demoshop.web.viewModel.ToyViewModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +19,8 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
-@RequestMapping("/toys")
-public class ToyController {
+@RequestMapping("/products")
+public class ProductController {
 
     //#TODO replace mock model
     @ModelAttribute

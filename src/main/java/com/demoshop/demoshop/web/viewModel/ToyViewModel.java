@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.viewModel;
+package com.demoshop.demoshop.web.viewModel;
 
 import lombok.Data;
 

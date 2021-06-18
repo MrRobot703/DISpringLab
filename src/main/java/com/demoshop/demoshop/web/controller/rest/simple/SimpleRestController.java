@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.controllers.rest.simple;
+package com.demoshop.demoshop.web.controller.rest.simple;
 
 import com.demoshop.demoshop.data.dto.simple.SimplePetDto;
 import com.demoshop.demoshop.data.dto.simple.SimpleRequestDto;

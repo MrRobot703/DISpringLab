@@ -1,6 +1,6 @@
-package com.demoshop.demoshop.dao.repository;
+package com.demoshop.demoshop.repositories;
 
-import com.demoshop.demoshop.dao.User;
+import com.demoshop.demoshop.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.lang.Nullable;
 

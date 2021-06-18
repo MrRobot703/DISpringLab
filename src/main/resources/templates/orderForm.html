@@ -3,13 +3,13 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/css/productStyles.css}" />
+    <link rel="stylesheet" href="/resources/css/productStyles.css"/>
 </head>
 <body>
 <form method="POST" th:action="@{/orders}" th:object="${productOrder}">
     <h1>Order your toy purchase!</h1>
-    <img th:src="@{/images/logo.png}"/>
-    <a th:href="@{/design}" id="another">Choose another product</a><br/>
+    <img th:src="@{/resources/images/logo.png}"/>
+    <a th:href="@{/products}" id="another">Choose another product</a><br/>
     <div th:if="${#fields.hasErrors()}">
         <span class="validationError">
             Please correct the problems below and resubmit.

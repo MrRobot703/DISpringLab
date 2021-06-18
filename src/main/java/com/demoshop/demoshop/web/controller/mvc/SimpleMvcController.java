@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.controllers.mvc;
+package com.demoshop.demoshop.web.controller.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -3,14 +3,14 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Online Shop Cloud</title>
-    <link rel="stylesheet" th:href="@{/css/productStyles.css}" />
+    <link rel="stylesheet" href="/resources/css/productStyles.css"/>
 </head>
 
 <body>
 <h1>Choose your toy!</h1>
-<img th:src="@{/images/logo.png}"/>
+<img th:src="@{/resources/images/logo.png}"/>
 
-<form method="POST" th:action="@{/toys}" th:object="${toy}">
+<form method="POST" th:action="@{/products}" th:object="${toy}">
     <span class="validationError"
           th:if="${#fields.hasErrors('properties')}"
           th:errors="*{properties}">Properties Error</span>

@@ -1,4 +1,4 @@
-package com.demoshop.demoshop.dao;
+package com.demoshop.demoshop.model;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -6,8 +6,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 @Entity(name="users")
 @Data
@@ -19,7 +19,7 @@ public class User implements UserDetails {
     private Long id;
 
     private final String username;
-    private final String password;
+    private String password;
     private final String fullName;
     private final String nickname;
     private final String phoneNumber;
@@ -29,7 +29,9 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority("USER"));
+        Collection<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("USER"));
+        return authorities;
     }
 
     @Override
