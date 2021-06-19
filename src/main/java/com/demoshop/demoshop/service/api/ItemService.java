@@ -11,6 +11,9 @@ public interface ItemService {
     ItemEntity saveOrUpdate(ItemEntity item);
     ItemDto convertToItemDto(ItemEntity itEntity);
     ItemEntity getItemById(Long id);
+
+    String getDescriptionById(Long id);
+
     void delete(Long id);
 
 

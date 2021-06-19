@@ -37,6 +37,11 @@ public class ItemServiceImpl implements ItemService {
         return itRepository.findById(id).get();
     }
 
+    @Override
+    public String getDescriptionById(Long id) {
+        return getItemById(id).getDescription();
+    }
+
     public ItemEntity save(ItemDto dto) {
         ItemEntity entity = new ItemEntity();
         entity.setName(dto.getName());
