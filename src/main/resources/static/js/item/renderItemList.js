@@ -1,6 +1,7 @@
 var base_url = 'http://localhost:8080/';
 var mainDiv;
 
+//import styles from './css/main.css'
 
 
 function renderItemList() {
@@ -19,12 +20,19 @@ function renderItemList() {
              var tr;
              var td;
             data.forEach(function (item) {
+//                               tr.className="rowStyle";
                                tr = table.insertRow();
                                tr.style.border = '1px black';
                                tr.style.backgroundColor="darkseagreen";
                                td = tr.insertCell();
                                td.style.width  = '300px';
-                               td.appendChild(document.createTextNode(item.name));
+
+                               var a = document.createElement('a');
+                               var linkText = document.createTextNode(item.name);
+                               a.appendChild(linkText);
+                               a.title = item.name;
+                               a.href='/item'+1001;
+                               td.appendChild(a);
                                td = tr.insertCell();
                                td.style.width  = '300px';
                                switch (item.name) {
@@ -46,7 +54,11 @@ function renderItemList() {
 
                                }
                                td = tr.insertCell();
+                               td.style.width  = '100px';
                                td.appendChild(document.createTextNode(item.price));
+                                td = tr.insertCell();
+                                td.style.width  = '100px';
+                                td.appendChild(document.createTextNode('Description'));
 
                         });
 
