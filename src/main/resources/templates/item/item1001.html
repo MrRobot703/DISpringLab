@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TV</title>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="~{layout/head :: head}">
 </head>
-<body>
+
+<body class="page">
+
+<div th:insert="~{layout/header :: header}"></div>
+
+<div id="wrap">
+    <div id="main" class="container clear-top">
+        <div id="contentDiv"></div>
+    </div>
+</div>
 
 </body>
+<h1>TV</h1>
+<div style="text-align: left; ">
+    <img src='/resources/img/tv.jpg' width='700' height='250'>
+</div>
 </html>

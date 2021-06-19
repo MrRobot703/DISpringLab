@@ -17,12 +17,6 @@ public class ItemMvcController {
         else
             return "item/item" + id;
     }
-
-
-//    @PostMapping({"/test"})
-//    public String getTv(@RequestBody Long id) {
-//        return "item/item_"+id;
-//    }
 }
 
 
