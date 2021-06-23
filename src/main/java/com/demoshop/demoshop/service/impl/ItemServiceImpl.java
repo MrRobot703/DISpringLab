@@ -19,8 +19,10 @@ public class ItemServiceImpl implements ItemService {
 
     public ItemDto convertToItemDto(ItemEntity itEntity) {
         ItemDto tmpDto = new ItemDto();
+        tmpDto.setId(itEntity.getId());
         tmpDto.setName(itEntity.getName());
         tmpDto.setPrice(itEntity.getPrice());
+        tmpDto.setDescription(itEntity.getDescription());
         return tmpDto;
     }
 
