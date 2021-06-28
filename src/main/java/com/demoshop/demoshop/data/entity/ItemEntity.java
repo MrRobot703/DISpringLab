@@ -30,6 +30,9 @@ public class ItemEntity {
         @Column(name = "price")
         private double price;
 
+        @Column(name = "description")
+        private String description;
+
 }
 
 

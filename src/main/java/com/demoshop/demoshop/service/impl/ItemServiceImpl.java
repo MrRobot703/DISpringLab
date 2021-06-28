@@ -19,8 +19,10 @@ public class ItemServiceImpl implements ItemService {
 
     public ItemDto convertToItemDto(ItemEntity itEntity) {
         ItemDto tmpDto = new ItemDto();
+        tmpDto.setId(itEntity.getId());
         tmpDto.setName(itEntity.getName());
         tmpDto.setPrice(itEntity.getPrice());
+        tmpDto.setDescription(itEntity.getDescription());
         return tmpDto;
     }
 
@@ -35,6 +37,11 @@ public class ItemServiceImpl implements ItemService {
 
     public ItemEntity getItemById(Long id) {
         return itRepository.findById(id).get();
+    }
+
+    @Override
+    public String getDescriptionById(Long id) {
+        return getItemById(id).getDescription();
     }
 
     public ItemEntity save(ItemDto dto) {

@@ -23,3 +23,10 @@ spring:
     cache: false
   messages:
     basename: validation
+  logging:
+    config: class-path:logback.xml
+  level:
+    com.demoshop.demoshop: info
+  file:
+    name: logs/demoShop-service.log
+

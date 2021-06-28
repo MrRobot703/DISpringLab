@@ -18,11 +18,6 @@ public class ItemController {
     @Qualifier("actualEntityService")
     ItemService entService;
 
-    @GetMapping("/test")
-    public String sayHello() {
-        return "Hello, world!";
-    }
-
     @PostMapping("/saveItem")
     public String sayItemByPost(@RequestBody ItemDto item) {
         Object obj = entService.save(item);
