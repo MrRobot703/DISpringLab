@@ -11,6 +11,7 @@ databaseChangeLog:
               - column: { name: item_id, type: bigint, remarks: 'Item ID' }
               - column: { name: name, type: varchar, remarks: 'Name' }
               - column: { name: price, type: double precision, remarks: 'Price' }
+              - column: { name: description, type: varchar, remarks: 'Description' }
 
 
   #Constraints

@@ -1,5 +1,13 @@
+
 .shopName {
     /* font-size: larger !important; */
     text-align: center;
     background: blue;
+}
+
+.rowStyle{
+
+   background:darkseagreen;
+
+
 }
