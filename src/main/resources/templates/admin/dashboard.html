@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin Tools</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/admin/adminStyles.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/products/products.css">
+</head>
+
+<body>
+<div class="app-viewport inspect_">
+    <div class="app-header">
+        <div class="app-branding">
+            <h1 class="app-brand">Admin dashbord</h1>
+        </div>
+        <div class="app-nav">
+            <input type="search" placeholder="search">
+        </div>
+    </div>
+
+    <div class="app-main">
+        <div data-view-name="dashboard" class="section">
+            <div id="dashboard-chart"></div>
+            <div class="sparklines">
+                <div id="dashboard-spark1"></div>
+                <div id="dashboard-spark2"></div>
+                <div id="dashboard-spark3"></div>
+            </div>
+        </div>
+
+        <div data-view-name="items" class="section">
+            <nav class="product-filter">
+                <h1>Products</h1>
+                <div class="sort">
+                    <div class="collection-sort">
+                        <label>Filter by:</label>
+                        <select>
+                            <option value="/">All Products</option>
+                        </select>
+                    </div>
+
+                    <div class="collection-sort">
+                        <label>Sort by:</label>
+                        <select>
+                            <option value="/">Featured</option>
+                        </select>
+                    </div>
+                </div>
+            </nav>
+            <section class="products"></section>
+            <footer class="button-panel">
+                <button onclick="loadItems()">Load Products</button>
+                <button class="invisible" onclick="addNewProduct()">Add New Product</button>
+                <button class="invisible" onclick="clearView()">Clear View</button>
+            </footer>
+        </div>
+
+        <div data-view-name="not_found" class="section">
+            <h1>Not Found</h1>
+        </div>
+    </div>
+
+    <div class="app-sidebar">
+        <ul class="app-sidebar-menu">
+            <li class="active">
+                <a href="#dashboard">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#items">
+                    <span>Items &amp; Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="#users">
+                    <span>Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="#serverlogs">
+                    <span>Server Logs</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="/resources/js/admin/admin.js"></script>
+
+</html>

@@ -1,31 +1,43 @@
 package com.demoshop.demoshop.model;
 
+import com.demoshop.demoshop.data.entity.ItemEntity;
 import lombok.Data;
-import org.hibernate.validator.constraints.CreditCardNumber;
 
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Data
+@Entity(name="orders")
 public class Order {
 
-    @NotBlank(message = "Name is required")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String name;
 
-    @NotBlank(message = "Street is required")
     private String street;
 
-    @NotBlank(message = "City is required")
     private String city;
 
-    @CreditCardNumber(message = "Not a valid credit card number")
     private String ccNumber;
 
-    @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",
-            message = "Must be formatted MM/YY")
     private String ccExpiration;
 
-    @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
     private String ccCVV;
+
+    private Date placedAt;
+
+    @ManyToMany(targetEntity = ItemEntity.class)
+    private List<ItemEntity> items;
+
+    public void addProduct(ItemEntity product) {
+        this.items.add(product);
+    }
+
+    @PrePersist
+    public void placeAt() {
+        this.placedAt = new Date();
+    }
 }

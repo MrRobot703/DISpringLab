@@ -39,9 +39,14 @@ public class ItemController {
         return entService.getItemById(id);
     }
 
-    @PostMapping("/deleteItem")
-    public void deleteItem(@RequestBody Long id) {
+    @PostMapping("/deleteItemById")
+    public void deleteItemById(@RequestBody Long id) {
         entService.delete(id);
+    }
+
+    @PostMapping("/deleteItem")
+    public void deleteItem(@RequestBody ItemDto itemDto) {
+        entService.deleteByName(itemDto.getName());
     }
 
     @PutMapping("/updateItem")

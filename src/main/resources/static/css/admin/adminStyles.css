@@ -1,0 +1,241 @@
+:root {
+    --app-sidebar-width: 240px;
+    --app-sidebar-min-width: 60px;
+    --app-header-height: 60px;
+    --app-padding: 1rem;
+ }
+
+ html,
+ body {
+    font-family: Inter, Arial, sans-serif;
+    background: #eff4f7;
+ }
+
+ html,
+ body,
+ .app-viewport {
+    height: 100%;
+    margin: 0;
+ }
+
+ .app-viewport.inspect * {
+    border: 1px solid red;
+ }
+
+ .app-viewport {
+    display: grid;
+    grid-template-columns: var(--app-sidebar-width) 1fr;
+    grid-template-rows: var(--app-header-height) 1fr;
+    grid-template-areas:
+       "AppSidebar AppHeader"
+       "AppSidebar AppMain";
+ }
+
+ .app-header {
+    grid-area: AppHeader;
+    margin-left: calc(var(--app-sidebar-width) * -1);
+    z-index: 2;
+ }
+
+ .app-nav,
+ .app-header,
+ .app-branding {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-items: flex-start;
+    color: #fff;
+ }
+
+ .app-nav {
+    padding: 0 var(--app-padding);
+    flex: auto;
+ }
+
+ .app-branding {
+    width: var(--app-sidebar-width);
+    padding: 0 var(--app-padding);
+ }
+
+ .app-main {
+    grid-area: AppMain;
+    overflow-y: auto;
+    z-index: 1;
+    padding: var(--app-padding);
+ }
+
+ .app-sidebar {
+    display: grid;
+    grid-area: AppSidebar;
+    margin-top: var(--app-header-height);
+    overflow: hidden;
+    z-index: 1;
+ }
+
+ .app-sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+ }
+
+ .app-sidebar-menu > li > a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-items: start;
+    padding: 5px 0;
+ }
+
+ .app-sidebar-menu > li > a > .menu-icon {
+    margin-left: 15px;
+ }
+
+ .app-sidebar-menu > li > a > span {
+    margin-left: 10px;
+ }
+
+ .placeholder {
+    display: block;
+    height: 1200px;
+    background: rgba(0, 0, 0, 0.05);
+ }
+
+ .placeholder:after {
+    content: " ";
+ }
+
+ .app-viewport {
+    background: #e9ecef;
+ }
+
+ .app-header,
+ .app-sidebar-header {
+    background: #202020;
+ }
+
+ .app-sidebar {
+    background: #0d28f2;
+    font-size: 15px;
+    padding: 20px 0;
+ }
+
+ .app-sidebar-menu > li > a {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+ }
+
+ .app-sidebar-menu > li.active > a,
+ .app-sidebar-menu > li > a:hover {
+    opacity: 1;
+ }
+
+ .app-brand {
+    font-size: 130%;
+    font-weight: 500;
+    line-height: 1.2rem;
+ }
+
+ .app-nav-toggle,
+ .app-brand {
+    color: #fff;
+ }
+
+ @media screen and (max-width: 768px) {
+    .app-viewport {
+       grid-template-columns: var(--app-sidebar-min-width) 1fr;
+    }
+
+    .app-header {
+       margin-left: calc(var(--app-sidebar-min-width) * -1);
+    }
+
+    .app-branding {
+       width: var(--app-sidebar-min-width);
+       padding: 0;
+       justify-content: center;
+    }
+
+    .app-brand {
+       display: none;
+    }
+
+    .app-sidebar-menu > li {
+       width: var(--app-sidebar-min-width);
+    }
+
+    .app-sidebar-menu > li > a {
+       display: block;
+       text-align: center;
+    }
+
+    .app-sidebar-menu > li > a > span {
+       display: none;
+    }
+
+    .app-sidebar-menu > li > a > .menu-icon {
+       margin: 0;
+       padding: 0;
+       font-size: 30px;
+    }
+ }
+
+ .section {
+    display: none;
+ }
+
+
+ .section h1 {
+    font-size: 18px;
+ }
+
+ .section.active {
+    display: block;
+ }
+
+ #dashboard-spark1,
+ #dashboard-spark2,
+ #dashboard-spark3,
+ #dashboard-chart {
+    padding: 15px 15px 15px 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    min-height: 400px;
+    margin-bottom: 20px;
+ }
+
+ .sparklines {
+    display: flex;
+    width: 100%;
+ }
+
+ .sparklines > div {
+    flex: 1;
+ }
+
+ .sparklines > div#dashboard-spark2 {
+    margin: 0 20px 20px;
+ }
+
+ .visible {
+    display: block;
+ }
+
+ .invisible {
+    display: none;
+ }
+
+ @media screen and (max-width: 768px) {
+    .sparklines {
+       display: block;
+    }
+
+    .sparklines > div {
+       margin: 0 0 20px !important;
+    }
+ }

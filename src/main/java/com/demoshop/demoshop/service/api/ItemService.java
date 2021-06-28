@@ -12,6 +12,6 @@ public interface ItemService {
     ItemDto convertToItemDto(ItemEntity itEntity);
     ItemEntity getItemById(Long id);
     void delete(Long id);
-
+    void deleteByName(String name);
 
 }

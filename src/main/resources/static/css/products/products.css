@@ -1,0 +1,64 @@
+.product-filter, .sort {
+    display: flex;
+}
+
+.collection-sort {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-filter h1 {
+    flex-grow: 1;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    padding: 2%;
+    margin: 1rem;
+    border-style: solid;
+    border-width: 0.3em;
+    border-color: #202020;
+    border-radius: 0.3em;
+    flex-basis: 16%;
+    background-color: #FFF;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
+}
+
+.product-image img {
+    max-width: 100%;
+}
+
+.product-info {
+    margin-top: auto;
+    padding-top: 20px;
+	text-align: center;
+}
+
+.name, .price, .description {
+    margin: 0;
+}
+
+@media (max-width: 920px) {
+    .product {
+      flex: 1 21%;
+    }
+}
+
+@media (max-width: 600px) {
+    .product {
+      flex: 1 46%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-filter {
+      flex-direction: column;
+    }
+    .sort {
+        align-self: flex-start;
+    }
+}

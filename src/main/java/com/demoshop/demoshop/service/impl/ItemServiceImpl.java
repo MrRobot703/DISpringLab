@@ -58,6 +58,10 @@ public class ItemServiceImpl implements ItemService {
         } else
             return itRepository.save(item);
     }
+
+    public void deleteByName(String name) {
+        itRepository.deleteByName(name);
+    }
 }
 
 

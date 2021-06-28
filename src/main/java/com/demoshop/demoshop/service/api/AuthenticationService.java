@@ -1,6 +1,8 @@
 package com.demoshop.demoshop.service.api;
 
-public interface SecurityService {
+import org.springframework.security.core.userdetails.UserDetails;
+
+public interface AuthenticationService {
 
     boolean isAuthenticated();
 

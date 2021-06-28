@@ -1,6 +1,6 @@
 package com.demoshop.demoshop.service.impl;
 
-import com.demoshop.demoshop.service.api.SecurityService;
+import com.demoshop.demoshop.service.api.AuthenticationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SecurityServiceImpl implements SecurityService {
+public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -22,8 +22,9 @@ public class SecurityServiceImpl implements SecurityService {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationServiceImpl.class);
 
+    @Override
     public boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null ||
@@ -40,10 +41,10 @@ public class SecurityServiceImpl implements SecurityService {
                 userDetails, password, userDetails.getAuthorities()
         );
 
-        authenticationManager.authenticate(token);
-
+        Authentication authentication = authenticationManager.authenticate(token);
+        logger.debug("auth obj: ", authentication);
         if (token.isAuthenticated()) {
-            SecurityContextHolder.getContext().setAuthentication(token);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
             logger.debug(String.format("Auto login %s successfully!", username));
         }
     }
