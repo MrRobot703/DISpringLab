@@ -10,6 +10,7 @@ databaseChangeLog:
               - column: { name: item_id, value: 1001 }
               - column: { name: name, value: 'TV' }
               - column: { name: price, value: 10000 }
+              - column: { name: description, value: 'TV plasma Samsung' }
             tableName: item
 
         - insert:
@@ -17,6 +18,7 @@ databaseChangeLog:
               - column: { name: item_id, value: 1002 }
               - column: { name: name, value: 'Oven' }
               - column: { name: price, value: 8000 }
+              - column: { name: description, value: 'LG 20L Solo Microwave Oven' }
             tableName: item
 
         - insert:
@@ -24,6 +26,7 @@ databaseChangeLog:
               - column: { name: item_id, value: 1003 }
               - column: { name: name, value: 'Washer' }
               - column: { name: price, value: 11000 }
+              - column: { name: description, value: 'The Amana NTW4516FW' }
             tableName: item
 
         - insert:
@@ -31,6 +34,7 @@ databaseChangeLog:
               - column: { name: item_id, value: 1004 }
               - column: { name: name, value: 'Washing machine' }
               - column: { name: price, value: 7000 }
+              - column: { name: description, value: 'GE Appliances UltraFresh Front Load ' }
             tableName: item
 
         - insert:
@@ -38,4 +42,5 @@ databaseChangeLog:
               - column: { name: item_id, value: 1005 }
               - column: { name: name, value: 'Smartphone' }
               - column: { name: price, value: 22000 }
+              - column: { name: description, value: 'Samsung A51' }
             tableName: item
