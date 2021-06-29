@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:insert="~{layout/head :: head}">
-    <link rel="stylesheet" href="/resources/css/main.css"/>
-</head>
+<head th:insert="~{layout/head :: head}"></head>
 
 <script type="text/javascript" src="/resources/js/item/renderItemList.js"></script>
 <body class="page">
 
 <div th:insert="~{layout/header :: header}"></div>
+
+<div id="cartNav">
+    <div id="circle">0</div>
+    <img id="cartIcon" src="/resources/images/products/shopping-cart.svg" alt="">
+    <div id="cartDropDown">
+        <hr id="summaryLine">
+        <div class="total">
+            Total:<span id="totalPrice">0 $</span>
+        </div>
+        <form method="GET" action="/buyItems">
+            <input class="AddToCart" type="submit" placeholder="Buy!">
+        </form>
+    </div>
+</div>
 
 <div id="wrap">
     <div id="main" class="container clear-top">
@@ -16,5 +28,7 @@
 </div>
 
 </body>
+<script type="text/javascript" src="/resources/js/service/itemService.js"></script>
+<script type="text/javascript" src="/resources/js/cart/cart.js"></script>
 <script type="text/javascript" src="/resources/js/item/renderIListMain.js"></script>
 </html>

@@ -21,16 +21,24 @@ function switchActive(event) {
 }
 
 function deleteProduct(button) {
-    let name = button.parentNode.parentNode.id;
-    let productToDelete = productModels.filter(product => product.name = name)[0];
-    Item.deleteItemByNamePromise(productToDelete);
+    let itemView = button.parentNode.parentNode;
+    let name = itemView.id;
+    let productToDelete = productModels.filter(product => product.name == name)[0];
+    Item.deleteItemByNamePromise(productToDelete).then(() => itemView.parentNode.removeChild(itemView));
+}
+
+function deleteAllProducts() {
+
 }
 
 function addNewProduct() {
-    items = Item.getMockItems(5);
-    for (let item of items) {
+    let quantity = Number(document.getElementById("quantity").value);
+    productModels = Item.getMockItems(quantity);
+    for (let item of productModels) {
         Item.addItemPromise(item);
     }
+    createViewFor(productModels);
+    return false;
 }
 
 function loadItems() {
@@ -51,7 +59,7 @@ function clearView() {
 }
 
 function toggleButtons(className1, className2) {
-    document.querySelectorAll("button." + className1).forEach(button => {
+    document.querySelectorAll(".button-panel > ." + className1).forEach(button => {
         button.classList.remove(className1);
         button.classList.add(className2);
     });
@@ -92,61 +100,5 @@ function createNodesFromHtml(htmlString) {
     div.innerHTML = htmlString.trim();
     if (div.hasChildNodes()) {
         return div.childNodes;
-    }
-}
-
-function post(url, object) {
-    return fetch(url, {
-                           method: 'POST',
-                           headers: {
-                               'Content-Type': 'application/json;charset=utf-8',
-                               [csrfToken.headerName]: [csrfToken.token]
-                           },
-                           body: JSON.stringify(object)
-                       }).then(response => handle(response));
-}
-
-function get(url) {
-     return fetch(url, {
-             method: 'GET',
-             headers: {
-                 'Accept': 'application/json;charset=utf-8'
-             }
-         }).then(responce => responce.json());
-}
-
-function handle(text) {
-    console.log(text);
-}
-
-class Item {
-    constructor(id, name, price, description) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-    }
-
-    static getMockItems(n) {
-        let items = []
-        for (let i = 1; i < n + 1; i++)
-            items.push(new this(i, "name" + i, i + 0.99, "discription" + i));
-        return items;
-    }
-
-    static getAllItemsPromise() {
-        return get("/getAllItems");
-    }
-
-    static addItemPromise(item) {
-        return post("/saveItem", item);
-    }
-
-    static deleteItemByNamePromise(item) {
-        return post("/deleteItem", item);
-    }
-
-    static editItemPromise(item) {
-        return post("/updateItem", item);
     }
 }

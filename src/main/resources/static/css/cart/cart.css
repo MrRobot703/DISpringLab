@@ -1,0 +1,149 @@
+
+body{
+    background-color: rgb(228, 251, 255);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.product{
+    width: 175px;
+    height: 285px;
+    border: 1px black solid;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 30px;
+}
+h2{
+    margin: 5px 0px -10px 0px;
+    font-size: 18px;
+}
+
+h3{
+    margin: 0px;
+    font-size: 16px;
+}
+h4{
+    margin: 8px 0px 0px;
+    font-size: 14px;
+}
+.product img{
+    width: 135px;
+    margin: 0 auto;
+}
+.kg{
+    width: 3em;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.AddToCart{
+    width: 110px;
+    height: 35px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: none;
+    background-color: khaki;
+    border-color: burlywood;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 15px auto;
+    display: block;
+}
+.AddToCart:hover{
+    background-color: coral;
+}
+
+button:focus {
+    outline: none;
+}
+#cartDropDown {
+    background-color: white;
+    width: 250px;
+    height: 240px;
+    padding: 10px;
+    border: 1px grey solid;
+    overflow: auto;
+    border-radius: 20px;
+    position: fixed;
+    right: 100px;
+    top: 100px;
+    display: none;
+}
+.total{
+    width: 170px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px 0px 0px 15px;
+    position: relative;
+    top: -10px;
+}
+#summaryLine{
+    height: 3px;
+    background-color: grey;
+    border: none;
+    position: relative;
+    top: -10px;
+}
+#totalPrice{
+    float: right;
+}
+
+.cartElement{
+    width: 185px;
+    height: 56px;
+    border-bottom: 1px grey solid;
+    margin-top: 5px;
+    margin-left: 2px;
+    position: relative;
+}
+.productPicture{
+    width: 56px;
+    float: left;
+}
+.cartElement h4{
+    margin-top: 20px;
+}
+
+.price{
+    position: relative;
+    font-size: 20px;
+    top: -30px;
+    left: 107px;
+    text-align: right;
+    width: 75px;
+}
+img.close{
+    float: none;
+    width: 16px;
+    position: relative;
+    left: 165px;
+    top: -90px;
+    cursor: pointer;
+}
+#cartNav{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+
+#cartIcon{
+    width: 48px;
+    display: inline-block;
+    cursor: pointer;
+}
+#circle{
+    width: 20px;
+    height: 20px;
+    background-color: #ff4242;
+    border-radius: 20px;
+    text-align: center;
+    color: cornsilk;
+    position: relative;
+    top: 17px;
+    left: -11px;
+    font-size: 14px;
+}

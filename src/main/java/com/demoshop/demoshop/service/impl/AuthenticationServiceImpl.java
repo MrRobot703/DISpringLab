@@ -1,6 +1,7 @@
 package com.demoshop.demoshop.service.impl;
 
 import com.demoshop.demoshop.service.api.AuthenticationService;
+import com.demoshop.demoshop.service.api.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private UserService userService;
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationServiceImpl.class);
 
@@ -47,5 +51,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             logger.debug(String.format("Auto login %s successfully!", username));
         }
+    }
+
+    @Override
+    public void updateAuthoritiesInSecurityContext(Authentication authentication) {
+        UserDetails user = userDetailsService.loadUserByUsername(authentication.getName());
+        Authentication newAuthentication = new UsernamePasswordAuthenticationToken(
+                authentication.getPrincipal(), authentication.getCredentials(), user.getAuthorities());
+
+        SecurityContextHolder.getContext().setAuthentication(newAuthentication);
     }
 }

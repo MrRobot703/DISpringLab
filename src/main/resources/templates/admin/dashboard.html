@@ -51,7 +51,10 @@
             <section class="products"></section>
             <footer class="button-panel">
                 <button onclick="loadItems()">Load Products</button>
-                <button class="invisible" onclick="addNewProduct()">Add New Product</button>
+                <form class="invisible" onsubmit="return addNewProduct()" >
+                    <input type="number" id="quantity" name="quantity" min="1">
+                    <input type="submit" name="Submit" value="Add">
+                </form>
                 <button class="invisible" onclick="clearView()">Clear View</button>
             </footer>
         </div>
@@ -87,6 +90,7 @@
     </div>
 </div>
 </body>
+<script src="/resources/js/service/itemService.js"></script>
 <script src="/resources/js/admin/admin.js"></script>
 
 </html>

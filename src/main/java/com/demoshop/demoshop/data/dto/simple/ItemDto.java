@@ -1,10 +1,8 @@
 package com.demoshop.demoshop.data.dto.simple;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class ItemDto {
     private Long id;
     private String name;

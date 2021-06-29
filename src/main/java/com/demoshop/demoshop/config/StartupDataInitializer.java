@@ -38,6 +38,7 @@ public class StartupDataInitializer implements ApplicationListener<ContextRefres
         List<Privilege> adminPrivileges = Arrays.asList(readPrivilege, writePrivilege);
         Role adminRole = createRoleIfNotFound("ROLE_ADMIN", adminPrivileges);
         createRoleIfNotFound("ROLE_USER", Collections.singletonList(readPrivilege));
+        createRoleIfNotFound("ROLE_CUSTOMER", Collections.singletonList(readPrivilege));
 
         User admin = createAdmin("admin", "admin");
         admin.setRoles(Collections.singletonList(adminRole));

@@ -48,6 +48,7 @@ public class ItemServiceImpl implements ItemService {
         ItemEntity entity = new ItemEntity();
         entity.setName(dto.getName());
         entity.setPrice(dto.getPrice());
+        entity.setDescription(dto.getDescription());
         return itRepository.save(entity);
     }
 

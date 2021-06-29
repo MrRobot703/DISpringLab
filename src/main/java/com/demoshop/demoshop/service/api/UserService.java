@@ -9,6 +9,8 @@ public interface UserService {
 
     void saveUser(User user) throws AuthenticationException;
 
+    void updateUser(User user);
+
     User findUserByUsername(String username);
 
     boolean removeUserByUsername(String username);

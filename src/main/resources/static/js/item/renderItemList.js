@@ -1,7 +1,10 @@
-var base_url = 'http://localhost:8080/';
+var base_url = 'http://localhost:8080';
 var mainDiv;
+var items = [];
+var csrfToken = {};
 
 function renderItemList() {
+    get("/csrfToken").then(token => csrfToken = token);
     mainDiv.innerHTML = "";
     $.ajax({
         type: 'GET',
@@ -13,12 +16,12 @@ function renderItemList() {
             table.innerHTML +="<tr style='background-color:#28a745'><td colspan='2'>"
             +"<strong>Name</strong>"+"</td><td>"+"<strong>Price,rub</strong>"+"</td><td>"+"<strong>Description</strong>";
              table.className = "table table-success table-striped";
-             var tr;
-             var td;
             data.forEach(function (item) {
-                               tr = table.insertRow();
-                               td = tr.insertCell();
-                               var a = document.createElement('a');
+                               items.push(item);
+                               let tr = table.insertRow();
+                               tr.id = item.id;
+                               let td = tr.insertCell();
+                               let a = document.createElement('a');
                                a.appendChild(document.createTextNode(item.name));
                                a.title = item.name;
                                a.style.color='green';
@@ -47,11 +50,14 @@ function renderItemList() {
                                td = tr.insertCell();
                                td.appendChild(document.createTextNode(item.description));
 
+                               td = tr.insertCell();
+                               let button = document.createElement("button");
+                               button.id = item.id;
+                               button.setAttribute("onclick", "addItemToCart(this)");
+                               button.appendChild(document.createTextNode("Add To Cart"));
+                               td.appendChild(button);
                         });
-
-
             mainDiv.appendChild(table);
-
     }
 });
 }
